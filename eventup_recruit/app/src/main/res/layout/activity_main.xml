@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="xyz.chiragtoprani.eventup_recruit.MainActivity"
+
+    >
+
+         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+             android:background="#FFFFFF"
+             android:padding="10dp"
+             android:layout_marginTop="70dp"
+             android:elevation="2dp"
+            >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Looking for Attendees. "
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:id="@+id/id1"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Touch devices to transfer data."
+             android:textAlignment="center"
+             android:textSize="20dp"
+             android:id="@+id/textView"
+             android:layout_marginBottom="20dp"
+             android:layout_alignParentBottom="true"
+             android:fontFamily="sans-serif-condensed"
+
+             />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.Large.ChasingDots"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/id1"
+            android:layout_above="@id/textView"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+
+            app:SpinKit_Color="@color/colorAccent" />
+
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:elevation="2dp"
+        android:id="@+id/notif"
+        android:layout_alignParentBottom="true"
+        android:alpha="1"
+
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_check_circle_black_24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chirag was Registered "
+            android:textAlignment="center"
+            android:layout_centerVertical="true"
+            android:textSize="20dp"
+            android:id="@+id/added"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        </RelativeLayout>
+</RelativeLayout>
