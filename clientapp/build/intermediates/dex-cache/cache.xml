@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_16417c2d8a014af28700fd70c57c2c2694626953\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2a62c6b45d749fc6aee348684b0db186a06bc432">
+        <dex dex="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b65f7591804254817f09d563b836e147e86106dc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_236b17c4d0f4017f743949b74785cfa0be23b9f4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e51b35faadc146a5e4c446b8e226135eb2f299f1">
+        <dex dex="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_67caf81ed34b9da207782cc166a034983a2a9345\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chirag\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_c01d264546061b8b5213d762df190bea97c787a2\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_2f2607a58791a7fc5afcc32edf651a86a14108cb\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_4dec5e5a476b4cf9e92b88e5580bf0a99fb250f7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="C:\Users\Chirag\Documents\androidprac\Eventup_CLIENT\Android\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_a9e39b647f5557175e6302abdd99c94baa74d7ce\classes.dex" />
+    </item>
+
+</items>
