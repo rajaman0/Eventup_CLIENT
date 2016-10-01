@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Eventum</title>
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAfoo9GZc3MfBqgJQn0O9aPLEmUEqq5zvk",
+        authDomain: "eventum-eac60.firebaseapp.com",
+        databaseURL: "https://eventum-eac60.firebaseio.com",
+        storageBucket: "eventum-eac60.appspot.com",
+        messagingSenderId: "512687342416"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.css" />
+    <link href="form.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="container">
+      <!--<h3>FirebaseUI Demo</h3>-->
+      <div id="loading">Loading...</div>
+      <div id="loaded" class="hidden">
+        <div id="main">
+          <div id="user-signed-in" class="hidden">
+            <div id="user-info">
+              <!--<div id="photo-container">
+                <img id="photo"></img>
+              </div>-->
+              <div id="name"></div>
+              <div id="email"></div>
+              <div class="clearfix"></div>
+            </div>
+            <div>
+              <button id="sign-out" class="btn square-button material-btn">Sign Out</button>
+            </div>
+          
+            <div id="form">
+              <h1> Registration Form</h1>
+              <section class="contact-wrap"> 
+                <form class="material-form">
+                  <div class="input-block floating-field">
+                    <label>First Name</label>
+                    <input id="formFirstName" value=" " type="text" class="form-control">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>Last Name</label>
+                    <input id="formLastName" value=" " type="text" class="form-control">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>Contact E mail ID</label>
+                    <input id="formEmail" value=" " type="text" class="form-control">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>Major</label>
+                    <input id="formMajor" value=" " type="text" class="form-control">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>Graduation Year</label>
+                    <input id="formGradDate" value=" " type="text" class="form-control">
+                  </div>
+                  <!--<div class="error-label">Email ID already exists.</div>-->
+                  <!--
+                  <div class="input-block">
+                    <input placeholder="Enter Something" value="Non-Floating Field" type="text" class="form-control">
+                  </div>
+                  <div class="select-block">
+                    <label>Drop Down</label>
+                    <div class="custom-select">
+                      <div class="active-list">Australia</div>
+                      <input type="text" class="list-field" value="Australia" />
+                      <ul class="drop-down-list">
+                        <li>Australia</li>
+                        <li>India</li>
+                        <li>UAE</li>
+                        <li>USA</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="form-note">Some notes, Lorem ipsum dolor sit amet.</div>
+                  <div class="select-block">
+                    <label>Dropdown 1</label>
+                    <div class="custom-select">
+                      <div class="active-list">0</div>
+                      <input type="text" class="list-field" value="0" />
+                      <ul class="drop-down-list">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="select-block">
+                    <label>Dropdown 2</label>
+                    <div class="custom-select">
+                      <div class="active-list">0</div>
+                      <input type="text" class="list-field" value="0" />
+                      <ul class="drop-down-list">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                      </ul>
+                    </div>
+                  </div>-->
+                  <div>
+                    <h6>Choose File</h6>
+                    <input type="file" id="file" name="file" />
+                    <h6>File URL:</h6>
+                    <span id= "linkbox"></span>
+                  </div>
+                  <!--<div class="input-block floating-field textarea">
+                    <label>Drop your message here</label>
+                    <textarea rows="3" class="form-control"></textarea>
+                  </div>-->
+                  <!--
+                  <button class="btn square-button material-btn" onclick="updateInfo()">Send</button>
+                  -->
+                  <button id="submitButton" onclick="updateInfo()">Update</button>
+                </form>
+              </section>
+            </div>
+          </div>
+          <div id="user-signed-out" class="hidden">
+            <!--<h4>You are signed out.</h4>-->
+            <!--<p>
+              <button id="sign-in-with-redirect">Sign In with Redirect</button>
+              <button id="sign-in-with-popup">Sign In with Popup</button>
+            </p>-->
+            <div id="firebaseui-spa"  style="margin-top:30vh;text-align:center;">
+              <!--<h5>Single Page Application mode:</h5>-->
+              <h style="font-family: 'Roboto', sans-serif; font-weight:bold; font-size:8em;">Eventum</h>
+              <div id="firebaseui-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script>
+      //material contact form animation
+      var floatingField = $('.material-form .floating-field').find('.form-control');
+      var formItem = $('.material-form .input-block').find('.form-control');
+
+      //##case 1 for default style
+      //on focus
+      formItem.focus(function() {
+        $(this).parent('.input-block').addClass('has-value focus');
+      });
+      //removing focusing
+      formItem.blur(function() {
+        $(this).parent('.input-block').removeClass('focus');
+      });
+
+      //##case 2 for floating style
+      //initiating field
+      floatingField.each(function() {
+        var targetItem = $(this).parent();
+        if ($(this).val()) {
+          $(targetItem).find('label').css({
+            'top': '0',
+            'fontSize': '13px'
+          });
+        }
+      });
+      //on focus
+      floatingField.focus(function() {
+        $(this).parent('.input-block').addClass('has-value focus');
+        $(this).parent().find('label').animate({
+          'top': '0',
+          'fontSize': '13px'
+        }, 200);
+      });
+      //if value is not exists
+      floatingField.blur(function() {
+        $(this).parent('.input-block').removeClass('focus');
+        //if value is not exists
+        if ($(this).val().length == 0) {
+          $(this).parent('.input-block').removeClass('has-value');
+          $(this).parent().find('label').animate({
+            'top': '29px',
+            'fontSize': '18px'
+          }, 200);
+        }
+      });
+      //dropdown list
+      $('body').click(function() {
+        if ($('.custom-select .drop-down-list').is(':visible')) {
+          $('.custom-select').parent().removeClass('focus');
+        }
+        $('.custom-select .drop-down-list:visible').slideUp();
+      });
+      $('.custom-select .active-list').click(function() {
+        $(this).parent().parent().addClass('focus');
+        $(this).parent().find('.drop-down-list').stop(true, true).delay(10).slideToggle(300);
+      });
+      $('.custom-select .drop-down-list li').click(function() {
+        var listParent = $(this).parent().parent();
+        //listParent.find('.active-list').trigger("click");
+        listParent.parent('.select-block').removeClass('focus').addClass('added');
+        listParent.find('.active-list').text($(this).text());
+        listParent.find('input.list-field').attr('value', $(this).text());
+      });
+    </script>
+  </body>
+  </html>
