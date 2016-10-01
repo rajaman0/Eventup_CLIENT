@@ -19,7 +19,7 @@ var uiConfig = {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       scopes: ['https://www.googleapis.com/auth/plus.login']
     },
-    {
+    /*{
       provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       scopes :[
         'public_profile',
@@ -27,7 +27,7 @@ var uiConfig = {
         'user_likes',
         'user_friends'
       ]
-    },
+    },*/
     //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
     //firebase.auth.GithubAuthProvider.PROVIDER_ID,
     //firebase.auth.EmailAuthProvider.PROVIDER_ID
@@ -56,6 +56,18 @@ var signInWithPopup = function() {
   window.open('/widget', 'Sign In', 'width=985,height=735');
 };
 
+var updateInfo = function() {
+  console.log(currentUid);
+  console.log(document.getElementById('formFirstName').value);
+
+  firebase.database().ref('users/' + currentUid).set({
+    firstName: document.getElementById('formFirstName').value,
+    lastName: document.getElementById('formLastName').value,
+    email: document.getElementById('formEmail').value,
+    gradDate: document.getElementById('formGradDate').value,
+    major: document.getElementById('formMajor').value
+  });
+}
 
 /**
  * Displays the UI for a signed in user.
@@ -66,18 +78,49 @@ var handleSignedInUser = function(user) {
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
   document.getElementById('email').textContent = user.email;
-  if (user.photoURL){
+  /*if (user.photoURL){
     document.getElementById('photo').src = user.photoURL;
     document.getElementById('photo').style.display = 'block';
   } else {
     document.getElementById('photo').style.display = 'none';
-  }
+  }*/
 
-  firebase.database().ref('users/' + user.uid).set({
-    firstName: user.displayName,
-    lastName: 'lastName',
-    email: user.email,
-    ResumeLink: 'url'
+  console.log("handling signed in user");
+
+  firebase.database().ref('users/' + user.uid).once("value", function(snapshot) {
+    var a = snapshot.exists();
+    if (a == true) {
+      console.log("User exists already");
+      console.log(user.uid + " " + user.email + " " + snapshot.val().firstName);
+      console.log(snapshot.val());
+      document.getElementById('formEmail').setAttribute('value', snapshot.val().email);
+      if (snapshot.val().firstName)
+        document.getElementById('formFirstName').setAttribute('value', snapshot.val().firstName);
+      else
+        document.getElementById('formFirstName').removeAttribute('value');
+      if (snapshot.val().lastName)
+        document.getElementById('formLastName').setAttribute('value', snapshot.val().lastName);
+      else
+        document.getElementById('formLastName').removeAttribute('value');
+      if (snapshot.val().major)
+        document.getElementById('formMajor').setAttribute('value', snapshot.val().major);
+      else
+        document.getElementById('formMajor').removeAttribute('value');
+      if (snapshot.val().gradDate)
+        document.getElementById('formGradDate').setAttribute('value', snapshot.val().gradDate);
+      else
+        document.getElementById('formGradDate').removeAttribute('value');
+        
+    }
+    else {
+      console.log("User does not exist");
+      firebase.database().ref('users/' + user.uid).set({
+        firstName: '',
+        lastName: '',
+        email: user.email,
+        ResumeLink: 'urltest'
+      });
+    };
   });
 
   var auth = firebase.auth();
@@ -149,10 +192,10 @@ var initApp = function() {
   document.getElementById('sign-out').addEventListener('click', function() {
     firebase.auth().signOut();
   });
-  document.getElementById('delete-account').addEventListener(
+  /*document.getElementById('delete-account').addEventListener(
       'click', function() {
         firebase.auth().currentUser.delete();
-      });
+      });*/
 };
 
 window.addEventListener('load', initApp);

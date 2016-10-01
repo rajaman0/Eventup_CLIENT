@@ -4,11 +4,12 @@
 
 body {
   margin: 0;
+  background-color: #90A4AE;
 }
 
-#container {
+/*#container {
   text-align: center;
-}
+}*/
 
 .clearfix {
   clear: both;
@@ -25,6 +26,10 @@ body {
   max-width: 400px;
   padding: 10px;
   text-align: left;
+}
+
+#firebaseui-auth-container {
+  margin-top: 35vh;
 }
 
 #photo-container {
