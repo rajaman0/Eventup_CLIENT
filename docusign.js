@@ -148,8 +148,6 @@ function addRequestHeaders(options, email, password) {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 function parseResponseBody(err, res, body) {
 	console.log("\r\nAPI Call Result: \r\n", JSON.parse(body));
-	responseString.setHeader("Content-Type", "text/html");
-  responseString.write("<p>You can close this window now</p>");
 	responseString.end()
 	if( res.statusCode != 200 && res.statusCode != 201)	{ // success statuses
 		console.log("Error calling webservice, status is: ", res.statusCode);
