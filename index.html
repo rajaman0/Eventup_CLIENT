@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Eventum</title>
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAfoo9GZc3MfBqgJQn0O9aPLEmUEqq5zvk",
+        authDomain: "eventum-eac60.firebaseapp.com",
+        databaseURL: "https://eventum-eac60.firebaseio.com",
+        storageBucket: "eventum-eac60.appspot.com",
+        messagingSenderId: "512687342416"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.css" />
+    <link href="form.css" rel="stylesheet" type="text/css" media="screen" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="container">
+      <!--<h3>FirebaseUI Demo</h3>-->
+      <div id="loading" class="hidden">Loading...</div>
+      <div id="loaded" class="hidden">
+        <div id="main">
+          <div id="user-signed-in" class="hidden">
+
+            <button class="js-menu menu" type="button" style="display:block;">
+	            <span class="bar"></span>
+            </button>
+
+            <nav>
+              <ul>
+                <li style="cursor:pointer;text-align:center;font-family:'ubuntu';" id="sign-out">Sign Out</li>
+              </ul>
+              <ul>
+                <li style="cursor:pointer;text-align:center;font-family:'ubuntu';" id="sign-out">Help</li>
+              </ul>
+              <ul>
+                <li style="cursor:pointer;text-align:center;font-family:'ubuntu';" id="sign-out">About</li>
+              </ul>
+            </nav>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <p style="font-family: 'Ubuntu', sans-serif; font-weight:bold; font-size:8em;text-align:center;">Eventum</h>
+
+
+            <div id="user-info" style="text-align:center; font-family:'Ubuntu'; border:none;display:none;">
+              <!--<div id="photo-container">
+                <img id="photo"></img>
+              </div>-->
+              <div id="name" class="hidden"></div>
+              <!--<div id="email"></div>
+              <button id="sign-out" class="btn square-button material-btn">Sign Out</button>-->
+              <div class="clearfix"></div>
+            </div>
+            <div id="form">
+              <section class="contact-wrap">
+                <form class="material-form" method="post" action="/">
+                  <div class="input-block floating-field">
+                    <label>First Name</label>
+                    <input id="formFirstName" value=" " type="text" class="form-control" name="user[firstName]">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>Last Name</label>
+                    <input id="formLastName" value=" " type="text" class="form-control" name="user[lastName]">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>Contact E mail ID</label>
+                    <input id="formEmail" value=" " type="text" class="form-control" name="user[email]">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>School</label>
+                    <input id="formSchool" value=" " type="text" class="form-control">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>Major</label>
+                    <input id="formMajor" value=" " type="text" class="form-control">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>Graduation Year</label>
+                    <input id="formGradDate" value=" " type="text" class="form-control">
+                  </div>
+                  <div class="select-block">
+                    <label>Gender</label>
+                    <div class="custom-select">
+                      <div id="activeGender" class="active-list">Female</div>
+                      <input id="formGender" type="text" class="list-field" value="Female" />
+                      <ul class="drop-down-list">
+                        <li>Female</li>
+                        <li>Male</li>
+                        <li>Non-Binary</li>
+                        <li>Rather not share</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--
+                  <div class="select-block">
+                    <label>Dropdown 1</label>
+                    <div class="custom-select">
+                      <div class="active-list">0</div>
+                      <input type="text" class="list-field" value="0" />
+                      <ul class="drop-down-list">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="select-block">
+                    <label>Dropdown 2</label>
+                    <div class="custom-select">
+                      <div class="active-list">0</div>
+                      <input type="text" class="list-field" value="0" />
+                      <ul class="drop-down-list">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                      </ul>
+                    </div>
+                  </div>-->
+                  <div>
+                    <p>Upload Resume</p>
+                    <input type="file" id="file" name="file" />
+                    <h6>File URL:</h6>
+                    <span id= "linkbox"></span>
+                  </div>
+                  <!--<div class="input-block floating-field textarea">
+                    <label>Drop your message here</label>
+                    <textarea rows="3" class="form-control"></textarea>
+                  </div>-->
+                  <!--
+                  <button class="btn square-button material-btn" onclick="updateInfo()">Send</button>
+                  -->
+                  <button id="submitButton" onclick="updateInfo()">Register/Update</button>
+                  <div class="form-control">
+                    Please be sure to accept the privacy policy sent to your email.
+                  <div>
+                </form>
+              </section>
+            </div>
+          </div>
+          <div id="user-signed-out" class="hidden">
+            <!--<h4>You are signed out.</h4>-->
+            <!--<p>
+              <button id="sign-in-with-redirect">Sign In with Redirect</button>
+              <button id="sign-in-with-popup">Sign In with Popup</button>
+            </p>-->
+
+            <div id="firebaseui-spa"  style="margin-top:25vh;text-align:center;">
+
+              <!--<h5>Single Page Application mode:</h5>-->
+              <h id="title" style="font-family: 'Ubuntu', sans-serif; font-weight:bold; font-size:8em;"><br></h>
+              <div id="signIn" style="display:none;">
+                <div id="firebaseui-container" style="margin-top:40px;"></div>
+              </div>
+              <div id="footer" style="display:none;font-family:'Ubuntu';position:fixed;bottom:10px;height:auto;margin-top:40px;width:100%;text-align:center">Made at UCSD with ❤️</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script>
+      //material contact form animation
+      var floatingField = $('.material-form .floating-field').find('.form-control');
+      var formItem = $('.material-form .input-block').find('.form-control');
+
+      //##case 1 for default style
+      //on focus
+      formItem.focus(function() {
+        $(this).parent('.input-block').addClass('has-value focus');
+      });
+      //removing focusing
+      formItem.blur(function() {
+        $(this).parent('.input-block').removeClass('focus');
+      });
+
+      //##case 2 for floating style
+      //initiating field
+      floatingField.each(function() {
+        var targetItem = $(this).parent();
+        if ($(this).val()) {
+          $(targetItem).find('label').css({
+            'top': '0',
+            'fontSize': '13px'
+          });
+        }
+      });
+      //on focus
+      floatingField.focus(function() {
+        $(this).parent('.input-block').addClass('has-value focus');
+        $(this).parent().find('label').animate({
+          'top': '0',
+          'fontSize': '13px'
+        }, 200);
+      });
+      //if value is not exists
+      floatingField.blur(function() {
+        $(this).parent('.input-block').removeClass('focus');
+        //if value is not exists
+        if ($(this).val().length == 0) {
+          $(this).parent('.input-block').removeClass('has-value');
+          $(this).parent().find('label').animate({
+            'top': '29px',
+            'fontSize': '18px'
+          }, 200);
+        }
+      });
+      //dropdown list
+      $('body').click(function() {
+        if ($('.custom-select .drop-down-list').is(':visible')) {
+          $('.custom-select').parent().removeClass('focus');
+        }
+        $('.custom-select .drop-down-list:visible').slideUp();
+      });
+      $('.custom-select .active-list').click(function() {
+        $(this).parent().parent().addClass('focus');
+        $(this).parent().find('.drop-down-list').stop(true, true).delay(10).slideToggle(300);
+      });
+      $('.custom-select .drop-down-list li').click(function() {
+        var listParent = $(this).parent().parent();
+        //listParent.find('.active-list').trigger("click");
+        listParent.parent('.select-block').removeClass('focus').addClass('added');
+        listParent.find('.active-list').text($(this).text());
+        listParent.find('input.list-field').attr('value', $(this).text());
+      });
+    </script>
+    <script src="typed.js"></script>
+    <script>
+      $(function(){
+          $("#title").typed({
+            strings: [/*"instant tap to register", "instant resume transfer", "any android phone", */"Eventum"],
+            typeSpeed: 80,
+            showCursor: false,
+            callback: function() {
+              console.log("typed");
+              $('#signIn').fadeIn('slow');
+              $('#footer').fadeIn('slow');
+            }
+          });
+      });
+    </script>
+    <script>
+      /* A simple and scalable hamburger menu using css transitions. */
+      var isActive = false;
+
+      $('.js-menu').on('click', function() {
+        if (isActive) {
+          $(this).removeClass('active');
+          $('body').removeClass('menu-open');
+        } else {
+          $(this).addClass('active');
+          $('body').addClass('menu-open');
+        }
+
+        isActive = !isActive;
+      });
+    </script>
+  </body>
+  </html>
