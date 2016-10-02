@@ -28,6 +28,7 @@ dependencies {
     compile 'com.github.ybq:Android-SpinKit:1.1.0'
     compile 'com.android.support:cardview-v7:22.+'
 
+
     compile project(path: ':library')
 }
 

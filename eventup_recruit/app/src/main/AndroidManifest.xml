@@ -28,6 +28,42 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".DetailsActivity"
+            android:label="Candidate Details">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".MyPdfViewActivity"
+            android:label="Resume">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".ListViewActivity"
+            android:label="Registered Users">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
     </application>
+
 
 </manifest>
