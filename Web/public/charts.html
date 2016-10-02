@@ -2,6 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <title>FirebaseUI Auth Demo</title>
     <link href="charts.css" rel="stylesheet" type="text/css" media="screen" />
     <!-- COPY AND PASTE THE WEB SETUP SNIPPET HERE: -->
@@ -11,6 +15,118 @@
 
   </head>
   <body>
-    <div id="firebaseui-auth-container">test</div>
+    <div class="title">
+      <div class="main">
+        Event Data Visualization.
+      </div>
+      <div class="other">
+        DECAF
+      </div>
+    </div>
+    <div class="charts">
+      <div id="chart4" style="width: 25%; height: 200px;">
+        <div class="content">
+          <b>Total Population:</b>
+          <div class="num">
+            1131
+          </div>
+        </div>
+      </div>
+      <div id="chart2" style="width: 70%; height: 200px;"></div>
+
+      <div id="chart1" style="width: 35%; height: 350px;" ></div>
+      <div id="chart3" style="width: 60%; height: 350px;"></div>
+
+
+    </div>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Percentage'],
+          ['Male',     53],
+          ['Female',     40],
+          ['Other',     7]
+
+        ]);
+
+        var options = {
+          title: 'Gender Distribution',
+          pieHole: 0.4,
+          legend: { position: 'bottom' }
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart1'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawChart);
+
+     function drawChart() {
+       var arr = [];
+       arr.push(['Time', 'Population', 'Volunteers']);
+       var init1 = 20;
+       var init2 = 100;
+
+       for (var i = 0; i < 24; i ++){
+          if (i < 3) init1 += Math.floor(Math.random()*500*(i));
+          if (i < 7) init1 += Math.floor(Math.random()*10*(i));
+          else if (i < 20) init1 -= Math.floor(10*Math.random());
+          else init1 -= Math.floor(100*Math.random());
+
+
+          arr.push([i, init1 , Math.floor(init1/(10*(Math.random() * (.25) + 1)) * (Math.random() * (.25) + .75))]);
+       }
+
+       var data = google.visualization.arrayToDataTable(arr);
+
+
+
+
+       var options = {
+         title: 'Arena Population vs Time',
+         legend: { position: 'bottom' }
+       };
+
+       var chart = new google.visualization.AreaChart(document.getElementById('chart2'));
+
+       chart.draw(data, options);
+     }
+   </script>
+
+   <script type="text/javascript">
+     google.charts.load("current", {packages:['corechart']});
+     google.charts.setOnLoadCallback(drawChart);
+     function drawChart() {
+       var data = google.visualization.arrayToDataTable([
+         ["School", "Population", { role: "style" } ],
+         ["UCSD", 361, "color: #2196F3"],
+         ["SCU", 51, "color: #64B5F6"],
+         ["Stanford", 31, "color: #1976D2"],
+         ["UC Berkeley", 89, "color: #0D47A1"]
+       ]);
+
+       var view = new google.visualization.DataView(data);
+       view.setColumns([0, 1,
+                        { calc: "stringify",
+                          sourceColumn: 1,
+                          type: "string",
+                          role: "annotation" },
+                        2]);
+
+       var options = {
+         title: "Population per School",
+         bar: {groupWidth: "95%"},
+         legend: { position: "none" },
+       };
+       var chart = new google.visualization.ColumnChart(document.getElementById("chart3"));
+       chart.draw(view, options);
+   }
+   </script>
+
   </body>
 </html>

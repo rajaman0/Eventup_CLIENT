@@ -1,0 +1,66 @@
+.title{
+  box-sizing: border-box;
+  width: 100vw;
+  margin: 0;
+  height: auto;
+  color: white;
+  padding: 20px;
+  background-color: #3367D6;
+  padding-left: 50px;
+  box-shadow: 0 4px 2px -2px gray;
+  margin-bottom: 10px;
+
+}
+
+.title .main{
+  position:relative;
+  font-size: 25px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+.title .other{
+  position:relative;
+  font-size: 17px;
+  width: 100%;
+}
+#chart1, #chart2, #chart3, #chart4{
+  margin: 20px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  display:inline-block;
+  float:left;
+  background: white;
+
+}
+
+text{
+  font-family: "Ubuntu" !important;
+
+}
+
+.content{
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.num{
+  margin-top: 50px;
+  font-size: 50px;
+}
+
+.charts{
+  width:100%;
+  position: relative;
+  margin-right: 0px;
+  display: inline-block;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: 'ubuntu';
+  background: #ECEFF1;
+}
