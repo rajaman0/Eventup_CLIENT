@@ -26,7 +26,7 @@ app.get('/', function(req,res){
 });
 
 
-app.post('/',function(req,res){
+//app.post('/',function(req,res){
 	// Request Signature on a Document (Node.js)
 
 // To run this sample
@@ -72,8 +72,8 @@ async.waterfall(
 		var body = {
 			"recipients": {
 				"signers": [{
-					"email":req.body.user.email,
-					"name": req.body.user.firstName + " " + req.body.user.lastName,
+					"email":/*req.body.user.email*/"alantdrummerboy@gmail.com",
+					"name": /*req.body.user.firstName + " " + req.body.user.lastName*/"Alan Thomas",
 					"recipientId": 1,
 					"tabs": {
 						"signHereTabs": [{
@@ -120,7 +120,7 @@ async.waterfall(
 		});
 	} // end function
 ]);
-});
+//});
 
 //***********************************************************************************************
 // --- HELPER FUNCTIONS ---
