@@ -26,7 +26,7 @@ app.get('/', function(req,res){
 });
 
 
-//app.post('/',function(req,res){
+app.post('/',function(req,responseString){
 	// Request Signature on a Document (Node.js)
 
 // To run this sample
@@ -72,8 +72,8 @@ async.waterfall(
 		var body = {
 			"recipients": {
 				"signers": [{
-					"email":/*req.body.user.email*/"alantdrummerboy@gmail.com",
-					"name": /*req.body.user.firstName + " " + req.body.user.lastName*/"Alan Thomas",
+					"email":req.body.user.email,
+					"name": req.body.user.firstName + " " + req.body.user.lastName,
 					"recipientId": 1,
 					"tabs": {
 						"signHereTabs": [{
@@ -113,14 +113,11 @@ async.waterfall(
 
 		// send the request...
 		request(options, function(err, res, body) {
-			  if(err){
-					console.log("RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIP");
-					return;
-				}
+			parseResponseBody(err, res, body);
 		});
 	} // end function
 ]);
-//});
+
 
 //***********************************************************************************************
 // --- HELPER FUNCTIONS ---
@@ -151,6 +148,7 @@ function addRequestHeaders(options, email, password) {
 ///////////////////////////////////////////////////////////////////////////////////////////////
 function parseResponseBody(err, res, body) {
 	console.log("\r\nAPI Call Result: \r\n", JSON.parse(body));
+	responseString.send(200);
 	if( res.statusCode != 200 && res.statusCode != 201)	{ // success statuses
 		console.log("Error calling webservice, status is: ", res.statusCode);
 		console.log("\r\n", err);
@@ -158,11 +156,9 @@ function parseResponseBody(err, res, body) {
 	}
 	return true;
 }
-
+});
 
 
 var server = app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
-server.timeout = 300000;
