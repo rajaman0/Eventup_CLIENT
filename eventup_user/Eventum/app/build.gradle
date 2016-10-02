@@ -1,8 +1,8 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'+
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.example.tejasgopal.eventum"
         minSdkVersion 14
@@ -24,10 +24,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.google.firebase:firebase-auth:9.6.1'
     compile 'com.google.android.gms:play-services-auth:9.6.1'
-    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:design:23.2.1'
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-appindexing:9.6.1'
     compile 'com.github.ybq:Android-SpinKit:1.1.0'
