@@ -70,8 +70,13 @@ var updateInfo = function() {
     school: document.getElementById('formSchool').value,
     gender: document.getElementById('formGender').value
   });
+  document.getElementById('policyButton').removeAttribute('disabled');
 }
 
+var acceptPolicy = function(){
+  alert("Please accept the privacy policy document sent to your email");
+  window.close()
+}
 /**
  * Displays the UI for a signed in user.
  */
@@ -122,7 +127,7 @@ var handleSignedInUser = function(user) {
         document.getElementById('activeGender').setAttribute('value', snapshot.val().gender);
       else
         document.getElementById('formGender').removeAttribute('value');
-        
+
     }
     else {
       console.log("User does not exist");

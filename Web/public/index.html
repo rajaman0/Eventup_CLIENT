@@ -51,7 +51,7 @@
             <br/>
             <br/>
             <br/>
-            <br/>            
+            <br/>
             <br/>
             <br/>
 
@@ -68,19 +68,19 @@
               <div class="clearfix"></div>
             </div>
             <div id="form">
-              <section class="contact-wrap"> 
-                <form class="material-form">
+              <section class="contact-wrap">
+                <form class="material-form" method="post" action="/">
                   <div class="input-block floating-field">
                     <label>First Name</label>
-                    <input id="formFirstName" value=" " type="text" class="form-control">
+                    <input id="formFirstName" value=" " type="text" class="form-control" name="user[firstName]">
                   </div>
                   <div class="input-block floating-field">
                     <label>Last Name</label>
-                    <input id="formLastName" value=" " type="text" class="form-control">
+                    <input id="formLastName" value=" " type="text" class="form-control" name="user[lastName]">
                   </div>
                   <div class="input-block floating-field">
                     <label>Contact E mail ID</label>
-                    <input id="formEmail" value=" " type="text" class="form-control">
+                    <input id="formEmail" value=" " type="text" class="form-control" name="user[email]">
                   </div>
                   <div class="input-block floating-field">
                     <label>School</label>
@@ -93,7 +93,7 @@
                   <div class="input-block floating-field">
                     <label>Graduation Year</label>
                     <input id="formGradDate" value=" " type="text" class="form-control">
-                  </div>            
+                  </div>
                   <div class="select-block">
                     <label>Gender</label>
                     <div class="custom-select">
@@ -148,6 +148,9 @@
                   <button class="btn square-button material-btn" onclick="updateInfo()">Send</button>
                   -->
                   <button id="submitButton" onclick="updateInfo()">Register/Update</button>
+                  <div class="form-control">
+                    Please be sure to accept the privacy policy sent to your email.
+                  <div>
                 </form>
               </section>
             </div>
@@ -158,9 +161,9 @@
               <button id="sign-in-with-redirect">Sign In with Redirect</button>
               <button id="sign-in-with-popup">Sign In with Popup</button>
             </p>-->
-            
+
             <div id="firebaseui-spa"  style="margin-top:25vh;text-align:center;">
-              
+
               <!--<h5>Single Page Application mode:</h5>-->
               <h id="title" style="font-family: 'Ubuntu', sans-serif; font-weight:bold; font-size:8em;"><br></h>
               <div id="signIn" style="display:none;">
