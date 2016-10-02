@@ -113,7 +113,7 @@ async.waterfall(
 
 		// send the request...
 		request(options, function(err, res, body) {
-			parseResponseBody(err, res, body);
+				return;
 		});
 	} // end function
 ]);
