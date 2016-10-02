@@ -13,7 +13,7 @@ var recipientName = "Alan Thomas";			// recipient (signer) name
 var documentName = "testFile.pdf";		// copy document with this name into same directory!
 var baseUrl = ""; 				// we will retrieve this through the Login call
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('port', (process.env.PORT || 5000));
 // parse application/json
@@ -27,7 +27,6 @@ app.get('/', function(req,res){
 
 
 app.post('/',function(req,res){
-	console.log(req.body);
 	// Request Signature on a Document (Node.js)
 
 // To run this sample
@@ -73,8 +72,8 @@ async.waterfall(
 		var body = {
 			"recipients": {
 				"signers": [{
-					"email": req.body.email,
-					"name": recipientName,
+					"email":req.body.user.email,
+					"name": req.body.user.firstName + " " + req.body.user.lastName,
 					"recipientId": 1,
 					"tabs": {
 						"signHereTabs": [{
