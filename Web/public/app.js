@@ -19,7 +19,7 @@ var uiConfig = {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
       scopes: ['https://www.googleapis.com/auth/plus.login']
     },
-    /*{
+    {
       provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
       scopes :[
         'public_profile',
@@ -27,9 +27,9 @@ var uiConfig = {
         'user_likes',
         'user_friends'
       ]
-    },*/
-    //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    },
+    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    firebase.auth.GithubAuthProvider.PROVIDER_ID,
     //firebase.auth.EmailAuthProvider.PROVIDER_ID
   ],
   // Terms of service url.
@@ -65,7 +65,8 @@ var updateInfo = function() {
     lastName: document.getElementById('formLastName').value,
     email: document.getElementById('formEmail').value,
     gradDate: document.getElementById('formGradDate').value,
-    major: document.getElementById('formMajor').value
+    major: document.getElementById('formMajor').value,
+    school: document.getElementById('formSchool').value
   });
 }
 
@@ -77,7 +78,7 @@ var handleSignedInUser = function(user) {
   document.getElementById('user-signed-in').style.display = 'block';
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
-  document.getElementById('email').textContent = user.email;
+  //document.getElementById('email').textContent = user.email;
   /*if (user.photoURL){
     document.getElementById('photo').src = user.photoURL;
     document.getElementById('photo').style.display = 'block';
@@ -110,6 +111,10 @@ var handleSignedInUser = function(user) {
         document.getElementById('formGradDate').setAttribute('value', snapshot.val().gradDate);
       else
         document.getElementById('formGradDate').removeAttribute('value');
+      if (snapshot.val().school)
+        document.getElementById('formSchool').setAttribute('value', snapshot.val().school);
+      else
+        document.getElementById('formSchool').removeAttribute('value');
         
     }
     else {

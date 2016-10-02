@@ -16,7 +16,7 @@
       firebase.initializeApp(config);
     </script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 
     <script src="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.js"></script>
@@ -28,24 +28,46 @@
   <body>
     <div id="container">
       <!--<h3>FirebaseUI Demo</h3>-->
-      <div id="loading">Loading...</div>
+      <div id="loading" class="hidden">Loading...</div>
       <div id="loaded" class="hidden">
         <div id="main">
           <div id="user-signed-in" class="hidden">
-            <div id="user-info">
+
+            <button class="js-menu menu" type="button" style="display:block;">
+	            <span class="bar"></span>
+            </button>
+
+            <nav>
+              <ul>
+                <li style="cursor:pointer;text-align:center;font-family:'ubuntu';" id="sign-out">Sign Out</li>
+              </ul>
+              <ul>
+                <li style="cursor:pointer;text-align:center;font-family:'ubuntu';" id="sign-out">Help</li>
+              </ul>
+              <ul>
+                <li style="cursor:pointer;text-align:center;font-family:'ubuntu';" id="sign-out">About</li>
+              </ul>
+            </nav>
+            <br/>
+            <br/>
+            <br/>
+            <br/>            
+            <br/>
+            <br/>
+
+            <p style="font-family: 'Ubuntu', sans-serif; font-weight:bold; font-size:8em;text-align:center;">Eventum</h>
+
+
+            <div id="user-info" style="text-align:center; font-family:'Ubuntu'; border:none;display:none;">
               <!--<div id="photo-container">
                 <img id="photo"></img>
               </div>-->
-              <div id="name"></div>
-              <div id="email"></div>
+              <div id="name" class="hidden"></div>
+              <!--<div id="email"></div>
+              <button id="sign-out" class="btn square-button material-btn">Sign Out</button>-->
               <div class="clearfix"></div>
             </div>
-            <div>
-              <button id="sign-out" class="btn square-button material-btn">Sign Out</button>
-            </div>
-          
             <div id="form">
-              <h1> Registration Form</h1>
               <section class="contact-wrap"> 
                 <form class="material-form">
                   <div class="input-block floating-field">
@@ -59,6 +81,10 @@
                   <div class="input-block floating-field">
                     <label>Contact E mail ID</label>
                     <input id="formEmail" value=" " type="text" class="form-control">
+                  </div>
+                  <div class="input-block floating-field">
+                    <label>School</label>
+                    <input id="formSchool" value=" " type="text" class="form-control">
                   </div>
                   <div class="input-block floating-field">
                     <label>Major</label>
@@ -114,7 +140,7 @@
                     </div>
                   </div>-->
                   <div>
-                    <h6>Choose File</h6>
+                    <p>Upload Resume</p>
                     <input type="file" id="file" name="file" />
                     <h6>File URL:</h6>
                     <span id= "linkbox"></span>
@@ -126,7 +152,7 @@
                   <!--
                   <button class="btn square-button material-btn" onclick="updateInfo()">Send</button>
                   -->
-                  <button id="submitButton" onclick="updateInfo()">Update</button>
+                  <button id="submitButton" onclick="updateInfo()">Register/Update</button>
                 </form>
               </section>
             </div>
@@ -137,17 +163,22 @@
               <button id="sign-in-with-redirect">Sign In with Redirect</button>
               <button id="sign-in-with-popup">Sign In with Popup</button>
             </p>-->
-            <div id="firebaseui-spa"  style="margin-top:30vh;text-align:center;">
+            
+            <div id="firebaseui-spa"  style="margin-top:25vh;text-align:center;">
+              
               <!--<h5>Single Page Application mode:</h5>-->
-              <h style="font-family: 'Roboto', sans-serif; font-weight:bold; font-size:8em;">Eventum</h>
-              <div id="firebaseui-container"></div>
+              <h id="title" style="font-family: 'Ubuntu', sans-serif; font-weight:bold; font-size:8em;"><br></h>
+              <div id="signIn" style="display:none;">
+                <div id="firebaseui-container" style="margin-top:40px;"></div>
+              </div>
+              <div id="footer" style="display:none;font-family:'Ubuntu';position:fixed;bottom:10px;height:auto;margin-top:40px;width:100%;text-align:center">Made at UCSD with ❤️</div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script src="app.js"></script>
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script>
       //material contact form animation
       var floatingField = $('.material-form .floating-field').find('.form-control');
@@ -211,6 +242,37 @@
         listParent.parent('.select-block').removeClass('focus').addClass('added');
         listParent.find('.active-list').text($(this).text());
         listParent.find('input.list-field').attr('value', $(this).text());
+      });
+    </script>
+    <script src="typed.js"></script>
+    <script>
+      $(function(){
+          $("#title").typed({
+            strings: [/*"instant tap to register", "instant resume transfer", "any android phone", */"Eventum"],
+            typeSpeed: 80,
+            showCursor: false,
+            callback: function() {
+              console.log("typed");
+              $('#signIn').fadeIn('slow');
+              $('#footer').fadeIn('slow');
+            }
+          });
+      });
+    </script>
+    <script>
+      /* A simple and scalable hamburger menu using css transitions. */
+      var isActive = false;
+
+      $('.js-menu').on('click', function() {
+        if (isActive) {
+          $(this).removeClass('active');
+          $('body').removeClass('menu-open');
+        } else {
+          $(this).addClass('active');
+          $('body').addClass('menu-open');
+        }
+
+        isActive = !isActive;
       });
     </script>
   </body>

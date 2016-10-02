@@ -54,3 +54,92 @@ body {
     width: 40px;
   }
 }
+
+
+
+
+
+
+
+html {
+  font-size: 10px;
+}
+
+.menu {
+  transition: 0.1s transform linear;
+  position: relative;
+  background: 0;
+  float: left;
+  margin: 2rem;
+  height: 2.7rem;
+  width: 3.5rem;
+  z-index: 1;
+  outline: 0;
+  padding: 0;
+  border: 0;
+}
+
+.bar, .bar::before, .bar::after {
+  transition: 0.2s background linear 0.1s, 0.2s top linear 0.2s, 0.2s transform linear;
+  position: absolute;
+  background: #000;
+  margin: auto;
+  width: 100%;
+  height: 0.3rem;
+  content: '';
+  top: 50%;
+  left: 0;
+}
+.bar {
+  margin-top: -0.2rem;
+}
+.bar::before {
+  top: -1.2rem;
+}
+.bar::after {
+  top: 1.2rem;
+}
+.bar::before, .bar::after {
+  transform: rotate(0deg);
+}
+.active .bar {
+  background: 0;
+}
+.active .bar::before {
+  transform: rotate(45deg);
+}
+.active .bar::after {
+  transform: rotate(-45deg);
+}
+.active .bar::before, .active .bar::after {
+  top: 0;
+}
+.active .bar, .active .bar::before, .active .bar::after {
+  transition: 0.2s background linear 0.1s, 0.2s top linear, 0.2s transform linear 0.2s;
+}
+
+nav {
+  width: 120px;
+  height: 100%;
+  background: white;
+  position: fixed;
+  transform: translateX(-250px);
+  transition: transform 0.6s cubic-bezier(0.56, 0.1, 0.34, 0.91);
+  padding-top: 6.2rem;
+}
+.menu-open nav {
+  transform: translateX(0);
+}
+nav ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  padding: 20px 5px;
+  font-size: 2rem;
+}
+nav ul li:hover {
+  background: black;
+  color:white;
+}
