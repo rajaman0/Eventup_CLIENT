@@ -19,6 +19,7 @@
              android:padding="10dp"
              android:layout_marginTop="70dp"
              android:elevation="2dp"
+             android:id="@+id/content"
             >
 
         <TextView
@@ -71,7 +72,6 @@
         android:elevation="2dp"
         android:id="@+id/notif"
         android:layout_alignParentBottom="true"
-        android:alpha="1"
 
         >
 
@@ -95,4 +95,27 @@
             />
 
         </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:padding="10dp"
+        android:elevation="2dp"
+        android:layout_above="@id/notif"
+        android:id="@+id/lvg"
+        android:layout_marginBottom="10dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show attendees"
+            android:textAlignment="center"
+            android:layout_centerVertical="true"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+    </RelativeLayout>
 </RelativeLayout>
