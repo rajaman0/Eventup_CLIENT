@@ -152,7 +152,6 @@ function parseResponseBody(err, res, body) {
 		console.log("\r\n", err);
 		return false;
 	}
-	res.sendStatus(200);
 	return true;
 }
 });
