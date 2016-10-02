@@ -76,6 +76,7 @@ var updateInfo = function() {
 var acceptPolicy = function(){
 
   alert("Please accept the privacy policy document sent to your email");
+  window.close();
 }
 /**
  * Displays the UI for a signed in user.
