@@ -61,16 +61,18 @@ var updateInfo = function() {
   console.log(document.getElementById('formGender').value);
 
 
-  firebase.database().ref('users/' + currentUid).set({
+
+  firebase.database().ref('users/' + currentUid).update({
     firstName: document.getElementById('formFirstName').value,
     lastName: document.getElementById('formLastName').value,
     email: document.getElementById('formEmail').value,
     gradDate: document.getElementById('formGradDate').value,
     major: document.getElementById('formMajor').value,
     school: document.getElementById('formSchool').value,
-    gender: document.getElementById('formGender').value
+    gender: document.getElementById('formGender').value,
+
   });
-  document.getElementById('policyButton').removeAttribute('disabled');
+
 }
 
 var acceptPolicy = function(){
@@ -131,7 +133,7 @@ var handleSignedInUser = function(user) {
     }
     else {
       console.log("User does not exist");
-      firebase.database().ref('users/' + user.uid).set({
+      firebase.database().ref('users/' + user.uid).update({
         firstName: '',
         lastName: '',
         email: user.email,

@@ -374,14 +374,134 @@ h1 small {
   text-decoration: underline;
 }
 
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+/*
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 500;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    background-color: red;
+
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #wB90000;
+}*/
+
+.inputresume {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.inputresume .inputfile{
+  display:inline-block;
+  float: left;
+}
+
+.inputresume p{
+  font-size: 17px;
+  font-weight: 500;
+  color: #939393;
+  float:left;
+  display:inline-block;
+  margin-top: 7px;
+  margin-right: 25px;
+}
+
+#A1 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(150, 150, 162);
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    left: 0px;
+    letter-spacing: 2px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 0px;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 230px;
+    column-rule-color: rgb(150, 150, 162);
+    perspective-origin: 115px 20px;
+    transform-origin: 115px 20px;
+    background: rgb(235, 236, 240) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0.8px solid rgb(223, 224, 228);
+    border-radius: 3px 3px 3px 3px;
+    font: normal normal normal normal 14px / 18.62px Lato;
+    list-style: none outside none;
+    margin: 0px 15px 0px 0px;
+    outline: rgb(150, 150, 162) none 0px;
+    padding-top:7px;
+    padding-left: 10px;
+}/*#A_1*/
+
+.inputresume svg{
+  float:left;
+}
+
+.inputresume #linkbox{
+  font-size: 12px;
+  padding-left: 10px;
+  font-weight: 500;
+  color: black;
+  font-family: 'roboto';
+  margin-top:7px;
+  text-transform: none;
+  position: relative;
+top: 2px;
+}
+
+#linkbox a:link{
+  color:black;
+}
+
+
 #submitButton {
+  box-sizing: border-box;
+  color: rgb(150, 150, 162);
+  cursor: pointer;
+  display: inline-block;
+  left: 0px;
+  letter-spacing: 2px;
+  position: relative;
+  right: 0px;
+  top: 0px;
+  vertical-align: middle;
+  white-space: nowrap;
+  column-rule-color: rgb(150, 150, 162);
+  perspective-origin: 115px 20px;
+  transform-origin: 115px 20px;
+  background: rgb(235, 236, 240) none repeat scroll 0% 0% ;
+  border: 0.8px solid rgb(223, 224, 228);
+  border-radius: 3px 3px 3px 3px;
+  font: normal normal normal normal 14px / 18.62px Lato;
+  list-style: none outside none;
+  margin: 0px 15px 0px 0px;
+  outline: rgb(150, 150, 162) none 0px;
+
+    color:red;
+
     width:100%;
     display: inline-block;
     position: relative;
     height: 32px;
     border-radius: 2px;
-    font-size: 0.9em;
-    background-color: #4285f4;
-    color: #fff;
+    font-size: 12px;
+    color: black;
     font-family: 'roboto';
 }
