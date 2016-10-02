@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "512687342416",
+    "firebase_url": "https://eventum-eac60.firebaseio.com",
+    "project_id": "eventum-eac60",
+    "storage_bucket": "eventum-eac60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512687342416:android:a98d845db435ae9d",
+        "android_client_info": {
+          "package_name": "com.example.tejasgopal.eventum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512687342416-7gbp382ms8ubgh9ugged81f2fafa54vl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5RTkxHyDmdBwDtBCMFy7HzdXa_8DwKTM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
