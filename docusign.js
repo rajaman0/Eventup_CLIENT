@@ -15,6 +15,7 @@ var baseUrl = ""; 				// we will retrieve this through the Login call
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.set('port', (process.env.PORT || 5000));
 // parse application/json
 app.use(bodyParser.json());
 
@@ -23,6 +24,7 @@ app.use(express.static(__dirname));
 app.get('/', function(req,res){
 	res.sendFile("./index.html");
 });
+
 
 app.post('/',function(req,res){
 	console.log(req.body);
@@ -156,6 +158,6 @@ function parseResponseBody(err, res, body) {
 });
 
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
