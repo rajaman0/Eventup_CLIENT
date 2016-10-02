@@ -10,7 +10,7 @@ var email = "alan.friday@gmail.com";			// your account email
 var password = "password";			// your account password
 var integratorKey = "846c9053-98cd-4e7f-a2f8-c758cbe0a127";		// your Integrator Key (found on the Preferences -> API page)
 var recipientName = "Alan Thomas";			// recipient (signer) name
-var documentName = "testFile.pdf";		// copy document with this name into same directory!
+var documentName = "EventumPolicy.pdf";		// copy document with this name into same directory!
 var baseUrl = ""; 				// we will retrieve this through the Login call
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
