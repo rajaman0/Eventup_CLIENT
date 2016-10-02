@@ -113,7 +113,10 @@ async.waterfall(
 
 		// send the request...
 		request(options, function(err, res, body) {
-				return;
+			  if(err){
+					console.log("RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIP");
+					return;
+				}
 		});
 	} // end function
 ]);
