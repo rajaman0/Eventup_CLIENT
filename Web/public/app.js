@@ -58,7 +58,8 @@ var signInWithPopup = function() {
 
 var updateInfo = function() {
   console.log(currentUid);
-  console.log(document.getElementById('formFirstName').value);
+  console.log(document.getElementById('formGender').value);
+
 
   firebase.database().ref('users/' + currentUid).set({
     firstName: document.getElementById('formFirstName').value,
@@ -66,7 +67,8 @@ var updateInfo = function() {
     email: document.getElementById('formEmail').value,
     gradDate: document.getElementById('formGradDate').value,
     major: document.getElementById('formMajor').value,
-    school: document.getElementById('formSchool').value
+    school: document.getElementById('formSchool').value,
+    gender: document.getElementById('formGender').value
   });
 }
 
@@ -115,6 +117,11 @@ var handleSignedInUser = function(user) {
         document.getElementById('formSchool').setAttribute('value', snapshot.val().school);
       else
         document.getElementById('formSchool').removeAttribute('value');
+      console.log(snapshot.val().gender);
+      if (snapshot.val().gender)
+        document.getElementById('activeGender').setAttribute('value', snapshot.val().gender);
+      else
+        document.getElementById('formGender').removeAttribute('value');
         
     }
     else {
