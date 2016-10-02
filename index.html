@@ -140,9 +140,6 @@
                     <h6>File URL:</h6>
                     <span id= "linkbox"></span>
                   </div>
-                  <div class="input-block floating-field">
-                    <input type="submit" value="Accept Privacy Policy">
-                  </div>
                   <!--<div class="input-block floating-field textarea">
                     <label>Drop your message here</label>
                     <textarea rows="3" class="form-control"></textarea>
@@ -151,6 +148,9 @@
                   <button class="btn square-button material-btn" onclick="updateInfo()">Send</button>
                   -->
                   <button id="submitButton" onclick="updateInfo()">Register/Update</button>
+                  <div>
+                    <input id="policyButton" onclick="acceptPolicy()" type="submit" value="Accept Privacy Policy" disabled="disabled">
+                  </div>
                 </form>
               </section>
             </div>
