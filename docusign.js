@@ -117,6 +117,7 @@ async.waterfall(
 		});
 	} // end function
 ]);
+});
 
 //***********************************************************************************************
 // --- HELPER FUNCTIONS ---
@@ -154,7 +155,7 @@ function parseResponseBody(err, res, body) {
 	}
 	return true;
 }
-});
+
 
 
 var server = app.listen(process.env.PORT || 3000, function(){
